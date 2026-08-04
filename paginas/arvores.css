@@ -46,7 +46,7 @@
     border: 1px solid rgba(201,168,76,0.45);
     border-radius: var(--radius);
     padding: 14px;
-    width: 160px;
+    width: 175px;
     text-align: center;
     box-shadow: var(--shadow);
     backdrop-filter: blur(8px) brightness(1.05);
@@ -159,55 +159,26 @@
    perfeitamente em celular, PC e TV.
    Garantem 8 cartões por linha SEM calc().
    ============================================================ */
+/* ============================================================
+   8. LARGURAS FIXAS PADRONIZADAS
+   ------------------------------------------------------------
+   Todas as gerações com a mesma largura.
+   Garante 8 cartões por linha SEM calc().
+   ============================================================ */
 
-/* Pais */
-.card-pais {
-    width: 120px;
-    flex: 0 0 125px;
-}
-
-/* Avós */
-.card-avos {
-    width: 100px;
-    flex: 0 0 125px;
-}
-
-/* Bisavós */
-.card-bisavos {
-    width: 60px;
-    flex: 0 0 125px;
-}
-
-/* Trisavós */
-.card-trisavos {
-    width: 60px;
-    flex: 0 0 95px;
-}
-
-/* Tataravós */
-.card-tetravos {
-    width: 60px;
-    flex: 0 0 95px;
-}
-
-/* Pentavós */
-.card-pentavos {
-    width: 60px;
-    flex: 0 0 95px;
-}
-
-/* Hexavós */
-.card-hexavos {
-    width: 60px;
-    flex: 0 0 95px;
-}
-
-/* Bisneto / Bisneta — valor confirmado por você */
+.card-pais,
+.card-avos,
+.card-bisavos,
+.card-trisavos,
+.card-tetravos,
+.card-pentavos,
+.card-hexavos,
 .card-bisneto,
 .card-bisneta {
-    width: 150px;
-    flex: 0 0 150px;
+    width: 175px;
+    flex: 0 0 175px;
 }
+
 
 
 
@@ -890,9 +861,60 @@ body {
 .card-hexavos .pessoa img {
     height: 70px;
 }
+/* Ativa zoom nas fotos dos bisnetos */
+.card-foto {
+    cursor: zoom-in;
+    transition: transform .3s ease;
+}
 
+.card-foto:hover {
+    transform: scale(1.5);
+}
 
+/* Garante que o zoom não seja cortado pelo card */
+.card-pessoa {
+    overflow: visible;
+}
+/* LIGHTBOX NOVO — independente e seguro */
+.lightbox-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99999;
+}
 
+.lightbox-overlay img {
+    max-width: 90vw;
+    max-height: 90vh;
+    border-radius: 8px;
+    box-shadow: 0 0 25px rgba(0,0,0,0.5);
+}
+
+.lightbox-close {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    font-size: 32px;
+    color: #fff;
+    cursor: pointer;
+    z-index: 100000;
+    font-family: Arial, sans-serif;
+}
+.linha-geracao {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+
+    max-width: 1400px; /* ajuste conforme seu card */
+    margin: 0 auto;
+}
 
 
 
